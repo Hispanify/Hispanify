@@ -1,2 +1,120 @@
-h1
-	color green
+@import "normalize.styl"
+@import "iconfonts.styl"
+
+gris_oscuro = #333333
+gris_claro = #818181
+fucsia = #BB3A57
+nombre_seccion = 1.1rem
+a
+	text-decoration none
+body
+	font-family: 'Varela Round', sans-serif;
+	font-size 16px
+figure
+	margin 0
+img
+	vertical-align top //resuelve el problema de que sobrasen pixeles en la part inferior del panel de actions
+//buttons
+.button-menu
+	color gris_oscuro
+	left .5rem
+	margin-top -.5rem //restamos la mitad de la fuente para que se centre bien
+	position absolute
+	top 50%
+//oocss classes
+.action
+	color white
+	margin-right .5rem
+	font-size 1.2rem
+	&:last-child
+		margin-right 0
+	&.gray
+		color gris_claro
+	&.active
+		color gris_oscuro
+.actions
+	position absolute
+	bottom 0
+	left 0
+	right 0 //al poner esas dos referencias coge todo el ancho
+	background rgba(black .3)
+.relative
+	position relative
+.padding
+	padding 1rem
+.padding-tb
+	padding 1rem 0
+.progress
+	margin 1rem 0
+	position relative
+	.min
+		font-size .8rem
+		left 0
+		position absolute
+		top -.4rem
+	.max
+		font-size .8rem
+		position absolute
+		right 0
+		top -.4rem
+	.total
+		background gris_claro
+		border-radius 2px
+		height .3rem
+		margin 0 auto //barra centrada
+		width 75%
+	.state
+		background fucsia
+		border-radius 2px
+		height .3rem
+		position relative //no se le añade la clase en html porque sería muy redundante para desarrollar mas barras de progreso
+		width 30%
+	.circle
+		background rgba(gris_oscuro,.9)
+		border-radius 50%
+		height .6rem
+		position absolute
+		right -.3rem
+		top -.15rem
+		width .6rem
+.border-bottom
+	border-bottom 1px solid gris_claro
+.author
+	color gris_claro
+.center-block
+	margin 0 auto
+.center-text
+	text-align center
+.right-text
+	text-align right
+.container
+	font-size 0
+	padding 1.4rem 0 0 1.4rem
+	text-align center
+.header
+	height 3.5rem		
+	.title
+		color gris_oscuro
+		text-align center
+		font-size nombre_seccion
+		margin 0
+		line-height 3.5rem/*coge el mismo alto que tiene el contenedor por ser un texto de una sola linea se centra verticalmente*/
+.name
+	color gris_oscuro
+.menu
+	display none
+.song
+	display inline-block/*inline-block da propiedades de texto, por eso se pueden centrar con text-align*/
+	font-size 1rem
+	margin-right 1rem
+	margin-bottom 1rem
+	img
+		width 8rem
+		height 8rem
+	/*&:nth-child(even) la & refiere a .song, even busca los pares
+		margin-right 0*/
+	p
+		margin .5em 0
+.playing
+	&.small
+		width 20rem
